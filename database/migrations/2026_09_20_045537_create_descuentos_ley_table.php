@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('administracion.institucion_bancaria', function (Blueprint $table) {
+        Schema::create('admin_nomina.descuentos_ley', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_banco', 150)->unique();
+            $table->string('nombre_descuento', 150)->unique();
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('administracion.institucion_bancaria');
+        Schema::dropIfExists('admin_nomina.descuentos_ley');
     }
 };
